@@ -114,7 +114,8 @@ https://github.com/yeasy/blockchain_guide/blob/master/fabric/1.0.md
 	Putty连接linux主机：
 		LinuxOne生成的是.pem文件，pdf需要上传.ppy文件，直接选择所有文件类型上传.pem即可。
 ## kubernetes
-
+ - 书：Kubernetes权威指南：从Docker到Kubernetes实践全接触（第2版）
+ - kubernetes安装部署
 ## ELK
-
+ - ELK安装部署
 ## prometheus
