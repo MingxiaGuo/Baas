@@ -16,9 +16,26 @@
 ## 1.安装Etcd
 etcd服务作为kubernetes集群的主数据库，在安装kubernetes各服务之前需要首先安装和启动。
 
+
 从Github官网下载etcd发布的二进制文件，将etcd和etcdctl文件复制到/usr/bin目录。
 设置systemd服务文件/lib/systemd/system/etcd.service:
 	
+	[Unit]
+	Description=Etcd Serverd
+	After=network.target
+
+	[Service]
+	Type=notify
+	WorkingDirectory=/var/lib/etcd
+	EnvironmentFile=-/etc/etcd/etcd.conf
+	ExecStart=/usr/local/bin/etcd
+	Restart=on-failure
+	RestartSec=10s
+	LimitNOFILE=40000
+
+	[Install]
+	WantedBy=multi-user.target
+
 	
 ## 2.安装kube-apiserver
 ## 3.安装kube-controller-manager服务
